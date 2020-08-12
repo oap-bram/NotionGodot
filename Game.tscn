@@ -1,0 +1,78 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Notion.gd" type="Script" id=1]
+[ext_resource path="res://Game.gd" type="Script" id=2]
+[ext_resource path="res://notion_godot.svg" type="Texture" id=3]
+[ext_resource path="res://Player.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 57.685, 59.8311 )
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Notion" type="Node" parent="."]
+script = ExtResource( 1 )
+page = "77351428-f2f8-4386-a559-a5da7eebffa4"
+token = "3ce12fb9028784999b6a190cd005a905f8fcd4fa09e672ea5c2d75911f05a8cc4dc1e5a837d7035e462c384a9442ad0fcc0ea9672c151595b71b789036bfb9094ad4913ba73c4a09f83f354c5217"
+blocks = [ "https://www.notion.so/NotionGodot-77351428f2f84386a559a5da7eebffa4#a6ea70faa47f4ec1831a0c609b5ed9a1" ]
+
+[node name="UI" type="Control" parent="."]
+margin_right = 1024.0
+margin_bottom = 600.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI"]
+margin_left = 147.47
+margin_top = 43.7246
+margin_right = 229.47
+margin_bottom = 57.7246
+rect_scale = Vector2( 4, 4 )
+text = "NotionGodot"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -450.0
+margin_top = -149.0
+margin_right = 6.0
+margin_bottom = 28.0
+rect_scale = Vector2( 2, 2 )
+
+[node name="Button" type="Button" parent="UI"]
+margin_left = 806.089
+margin_top = 23.0736
+margin_right = 976.089
+margin_bottom = 81.0736
+text = "Placeholder text"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2( 0, 104 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PoolVector2Array( 1.30652, 468.015, 575.402, 462.353, 634.284, 364.972, 706.754, 428.383, 1029.47, 428.383, 1027.21, -3.03777, 1031.73, 669.571, 0.174164, 665.042, -3.22284, -4.1701 )
+
+[node name="Polygon2D" type="Polygon2D" parent="StaticBody2D"]
+color = Color( 0.329412, 0.0431373, 0.00784314, 1 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 80, 64 )
+script = ExtResource( 4 )
+movement_speed = 250
+
+[node name="Sprite" type="Sprite" parent="Player"]
+scale = Vector2( 0.466924, 0.466924 )
+texture = ExtResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 1 )
+[connection signal="block" from="Notion" to="." method="_on_Notion_block"]
+[connection signal="data" from="Notion" to="." method="_on_Notion_data"]
+[connection signal="pressed" from="UI/Button" to="." method="_on_Button_pressed"]
