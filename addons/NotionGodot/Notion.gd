@@ -1,6 +1,5 @@
 tool
 extends Node
-class_name NotionGodot, 'res://notion_godot.svg'
 
 signal data(data, url)
 signal block(id, block, url)
@@ -94,3 +93,4 @@ func set_table(_table):
 		return
 
 	table = strip_url_to_id(_table)
+

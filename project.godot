@@ -8,14 +8,9 @@
 
 config_version=4
 
-_global_script_classes=[ {
-"base": "Node",
-"class": "NotionGodot",
-"language": "GDScript",
-"path": "res://Notion.gd"
-} ]
+_global_script_classes=[  ]
 _global_script_class_icons={
-"NotionGodot": "res://notion_godot.svg"
+
 }
 
 [application]
@@ -23,6 +18,10 @@ _global_script_class_icons={
 config/name="NotionGodot"
 run/main_scene="res://Game.tscn"
 config/icon="res://icon.png"
+
+[editor_plugins]
+
+enabled=PoolStringArray( "NotionGodot" )
 
 [rendering]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://Notion.gd" type="Script" id=1]
+[ext_resource path="res://addons/NotionGodot/Notion.gd" type="Script" id=1]
 [ext_resource path="res://Game.gd" type="Script" id=2]
 [ext_resource path="res://notion_godot.svg" type="Texture" id=3]
 [ext_resource path="res://Player.gd" type="Script" id=4]
@@ -14,7 +14,6 @@ script = ExtResource( 2 )
 [node name="Notion" type="Node" parent="."]
 script = ExtResource( 1 )
 page = "77351428-f2f8-4386-a559-a5da7eebffa4"
-token = "3ce12fb9028784999b6a190cd005a905f8fcd4fa09e672ea5c2d75911f05a8cc4dc1e5a837d7035e462c384a9442ad0fcc0ea9672c151595b71b789036bfb9094ad4913ba73c4a09f83f354c5217"
 blocks = [ "https://www.notion.so/NotionGodot-77351428f2f84386a559a5da7eebffa4#a6ea70faa47f4ec1831a0c609b5ed9a1" ]
 
 [node name="UI" type="Control" parent="."]
